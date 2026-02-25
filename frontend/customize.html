@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customize • CS webTG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen bg-[#c9ced6] text-slate-900">
+    <header class="border-b border-black/15 bg-[#c9ced6]/80 backdrop-blur">
+      <div class="w-full px-4 py-4 flex items-center justify-between">
+        <a href="dashboard.html" class="flex items-center gap-3">
+          <img
+            src="assets/logo.png"
+            alt="Code Sanskriti Logo"
+            class="h-11 w-11 rounded-full object-cover ring-1 ring-black/15 shadow-sm"
+          />
+          <div class="font-black italic text-2xl text-sky-800/90">webTG</div>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="templates.html" class="font-semibold hover:underline"
+            >My Templates</a
+          >
+          <a
+            href="customize-advanced.html"
+            class="font-semibold hover:underline"
+            >Advanced</a
+          >
+          <button
+            id="logoutBtn"
+            class="h-10 px-4 rounded-full bg-white/60 border border-black/10 font-semibold"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Left panel -->
+        <section
+          class="rounded-2xl bg-white/40 border border-white/30 shadow-[0_20px_60px_rgba(0,0,0,.10)] p-6"
+        >
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h1 class="text-3xl font-extrabold">Customize</h1>
+              <p class="mt-1 text-sm opacity-75">
+                Build a clean template with instant preview and one-click
+                export.
+              </p>
+            </div>
+            <div class="text-right text-xs opacity-70">
+              <div class="font-semibold">Trusted Workflow</div>
+              <div>No external upload required</div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+            <span
+              class="px-3 py-1 rounded-full bg-white/70 border border-black/10"
+              >Local Preview</span
+            >
+            <span
+              class="px-3 py-1 rounded-full bg-white/70 border border-black/10"
+              >Fast Export</span
+            >
+            <span
+              class="px-3 py-1 rounded-full bg-white/70 border border-black/10"
+              >Editable HTML</span
+            >
+          </div>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="category" class="text-sm font-semibold opacity-80"
+                >Category</label
+              >
+              <select
+                id="category"
+                class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none"
+              >
+                <option value="">Any</option>
+                <option>GYM</option>
+                <option>Portfolio</option>
+                <option>Restaurant</option>
+                <option>Landing</option>
+                <option>Banking</option>
+                <option>Education</option>
+                <option>Healthcare</option>
+                <option>Ecommerce</option>
+                <option>Real Estate</option>
+                <option>Travel</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="style" class="text-sm font-semibold opacity-80"
+                >Style</label
+              >
+              <select
+                id="style"
+                class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none"
+              >
+                <option value="">Any</option>
+                <option>Minimal</option>
+                <option>Bold</option>
+                <option>Glass</option>
+                <option>Modern</option>
+                <option>Corporate</option>
+                <option>Classic</option>
+                <option>Neo</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="theme" class="text-sm font-semibold opacity-80"
+                >Theme</label
+              >
+              <select
+                id="theme"
+                class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none"
+              >
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="accent" class="text-sm font-semibold opacity-80"
+                >Accent</label
+              >
+              <div
+                class="mt-2 h-12 rounded-2xl border border-slate-300/80 bg-gradient-to-r from-white/90 to-slate-100/90 px-2 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,.9),0_6px_18px_rgba(15,23,42,.08)]"
+              >
+                <input
+                  id="accent"
+                  type="color"
+                  value="#0ea5e9"
+                  class="h-9 w-full cursor-pointer rounded-xl border border-slate-300/90 bg-white outline-none transition hover:scale-[1.01] focus:ring-2 focus:ring-sky-400/40"
+                />
+              </div>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="brandName" class="text-sm font-semibold opacity-80"
+                >Brand Name</label
+              >
+              <input
+                id="brandName"
+                class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-4 outline-none"
+                placeholder="Code Sanskriti"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label
+                for="templateSearch"
+                class="text-sm font-semibold opacity-80"
+                >Template Search</label
+              >
+              <input
+                id="templateSearch"
+                class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-4 outline-none"
+                placeholder="Search by name, category or style..."
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <div class="text-sm font-semibold opacity-80 mb-2">
+                Color Palette
+              </div>
+              <div id="paletteBar" class="flex flex-wrap gap-2">
+                <button type="button" data-colors="#0ea5e9,#2563eb,#0f172a" class="palette-chip palette-ocean h-9 px-3 rounded-xl border border-black/15 text-white text-xs font-bold">Ocean Pro</button>
+                <button type="button" data-colors="#22c55e,#14b8a6,#0f172a" class="palette-chip palette-mint h-9 px-3 rounded-xl border border-black/15 text-white text-xs font-bold">Mint Pro</button>
+                <button type="button" data-colors="#f97316,#ef4444,#7c2d12" class="palette-chip palette-sunset h-9 px-3 rounded-xl border border-black/15 text-white text-xs font-bold">Sunset Pro</button>
+                <button type="button" data-colors="#8b5cf6,#6366f1,#111827" class="palette-chip palette-royal h-9 px-3 rounded-xl border border-black/15 text-white text-xs font-bold">Royal Pro</button>
+                <button type="button" data-colors="#e11d48,#f43f5e,#111827" class="palette-chip palette-cherry h-9 px-3 rounded-xl border border-black/15 text-white text-xs font-bold">Cherry Pro</button>
+                <button type="button" data-colors="#111827,#1f2937,#475569" class="palette-chip palette-carbon h-9 px-3 rounded-xl border border-black/15 text-white text-xs font-bold">Carbon Pro</button>
+              </div>
+            </div>
+
+            <div>
+              <label for="pagesCount" class="text-sm font-semibold opacity-80"
+                >Website Pages</label
+              >
+              <select
+                id="pagesCount"
+                class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none"
+              >
+                <option value="4">4 Pages</option>
+                <option value="5">5 Pages</option>
+                <option value="6">6 Pages</option>
+                <option value="7">7 Pages</option>
+                <option value="8">8 Pages</option>
+                <option value="9" selected>9 Pages</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex items-center justify-between gap-3 mb-2">
+              <div class="font-bold">Choose a template</div>
+              <div
+                id="templateMeta"
+                class="text-xs font-semibold opacity-70"
+              ></div>
+            </div>
+            <div id="list" class="grid sm:grid-cols-2 gap-3"></div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <button
+              id="generateBtn"
+              class="px-6 py-3 rounded-2xl bg-slate-900 text-white font-bold hover:scale-[1.02] active:scale-[.98] transition"
+            >
+              Generate Website
+            </button>
+            <button
+              id="aiEnhanceBtn"
+              class="px-6 py-3 rounded-2xl bg-indigo-700 text-white font-bold hover:scale-[1.02] active:scale-[.98] transition"
+            >
+              AI Enhance
+            </button>
+
+            <button
+              id="downloadBtn"
+              disabled
+              class="px-6 py-3 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-700 text-white font-bold disabled:opacity-40"
+            >
+              Download Website
+            </button>
+
+            <button
+              id="saveBtn"
+              class="px-6 py-3 rounded-2xl bg-emerald-700 text-white font-bold hover:scale-[1.02] active:scale-[.98] transition"
+            >
+              Save to My Templates
+            </button>
+
+            <span id="status" class="text-sm font-semibold opacity-80"></span>
+          </div>
+          <p class="mt-2 text-xs opacity-70">
+            Tip: Generate before saving. Saved templates are available in My
+            Templates.
+          </p>
+        </section>
+
+        <!-- Preview -->
+        <section
+          class="rounded-2xl bg-white/40 border border-white/30 shadow-[0_20px_60px_rgba(0,0,0,.10)] p-4"
+        >
+          <div class="flex items-center justify-between px-2 py-2">
+            <div class="font-extrabold">Preview</div>
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-1 text-xs opacity-80">
+                View:
+                <button
+                  data-device="desktop"
+                  class="device-btn px-2 py-1 rounded-md bg-white/80 border border-black/10 text-[13px]"
+                >
+                  Desktop
+                </button>
+                <button
+                  data-device="tablet"
+                  class="device-btn px-2 py-1 rounded-md bg-white/0 border border-black/10 text-[13px]"
+                >
+                  Tablet
+                </button>
+                <button
+                  data-device="mobile"
+                  class="device-btn px-2 py-1 rounded-md bg-white/0 border border-black/10 text-[13px]"
+                >
+                  Mobile
+                </button>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <label for="zoom" class="sr-only">Zoom level</label>
+                <input
+                  id="zoom"
+                  type="range"
+                  min="60"
+                  max="120"
+                  value="100"
+                  class="h-1 w-24"
+                  aria-label="Zoom level"
+                />
+                <button
+                  id="openNew"
+                  class="px-3 py-1 rounded-md bg-white/80 border border-black/10 text-[13px]"
+                >
+                  Open
+                </button>
+                <button
+                  id="viewCode"
+                  class="px-3 py-1 rounded-md bg-white/80 border border-black/10 text-[13px]"
+                >
+                  View Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="previewWrap"
+            class="w-full flex justify-center py-4 rounded-2xl border border-white/60 bg-gradient-to-b from-slate-100/70 to-white/70"
+          >
+            <div
+              id="deviceFrame"
+              class="rounded-2xl shadow-[0_14px_32px_rgba(15,23,42,.14)] overflow-hidden bg-white w-full max-w-[1024px] transition-all"
+            >
+              <iframe
+                id="preview"
+                title="Template Preview"
+                class="w-full h-[700px] border-0 bg-white"
+                srcdoc="<!-- preview will load here -->"
+              ></iframe>
+            </div>
+          </div>
+
+          <p class="mt-3 text-sm opacity-70 px-2">
+            Tip: Visit Advanced for more styling and animation options.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="mt-10 py-6 text-center text-xs font-semibold opacity-70">
+      Copyright@CSwebTG v2.0
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        const deviceBtns = document.querySelectorAll(".device-btn");
+        const deviceFrame = document.getElementById("deviceFrame");
+        const zoom = document.getElementById("zoom");
+        const preview = document.getElementById("preview");
+        const openNew = document.getElementById("openNew");
+        const viewCode = document.getElementById("viewCode");
+
+        function setDevice(d) {
+          deviceBtns.forEach((b) => b.classList.remove("bg-white/80"));
+          const active = Array.from(deviceBtns).find(
+            (b) => b.dataset.device === d,
+          );
+          if (active) active.classList.add("bg-white/80");
+
+          if (d === "desktop") deviceFrame.style.maxWidth = "1024px";
+          if (d === "tablet") deviceFrame.style.maxWidth = "820px";
+          if (d === "mobile") deviceFrame.style.maxWidth = "390px";
+        }
+
+        deviceBtns.forEach((b) =>
+          b.addEventListener("click", () => setDevice(b.dataset.device)),
+        );
+
+        zoom.addEventListener("input", () => {
+          const s = Number(zoom.value) / 100;
+          deviceFrame.style.transform = `scale(${s})`;
+          deviceFrame.style.transformOrigin = "top center";
+        });
+
+        openNew.addEventListener("click", () => {
+          try {
+            const srcdoc = preview.srcdoc || "";
+            const w = window.open("", "_blank");
+            w.document.open();
+            w.document.write(srcdoc || "<p>No preview available</p>");
+            w.document.close();
+          } catch (e) {
+            console.error(e);
+          }
+        });
+
+        viewCode.addEventListener("click", () => {
+          try {
+            const srcdoc = preview.srcdoc || "";
+            const escaped = (srcdoc || "<!-- No preview available -->")
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;");
+            const w = window.open("", "_blank");
+            w.document.open();
+            w.document.write(`<!doctype html><html><head><meta charset="utf-8"/><title>Generated Code</title><style>body{margin:0;background:#0b1020;color:#e5e7eb;font-family:Consolas,Monaco,'Courier New',monospace}pre{margin:0;padding:16px;white-space:pre-wrap;word-break:break-word;line-height:1.45}</style></head><body><pre>${escaped}</pre></body></html>`);
+            w.document.close();
+          } catch (e) {
+            console.error(e);
+          }
+        });
+
+        // default
+        setDevice("desktop");
+      })();
+    </script>
+  </body>
+</html>

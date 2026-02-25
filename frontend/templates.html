@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Templates - CS webTG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen bg-[#c9ced6] text-slate-900">
+    <header class="border-b border-black/15 bg-[#c9ced6]/80 backdrop-blur">
+      <div class="w-full px-4 py-4 flex items-center justify-between">
+        <a href="dashboard.html" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Code Sanskriti Logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-black/15 shadow-sm" />
+          <div class="font-black italic text-2xl text-sky-800/90">webTG</div>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="customize.html" class="font-semibold hover:underline">Customize</a>
+          <button
+            id="logoutBtn"
+            class="h-10 px-4 rounded-full bg-white/60 border border-black/10 font-semibold"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h1 class="text-4xl font-extrabold">My Templates</h1>
+        <div class="flex items-center gap-2">
+          <input
+            id="searchSaved"
+            class="h-11 w-72 max-w-full rounded-xl border border-black/20 bg-white/70 px-4 outline-none"
+            placeholder="Search saved templates..."
+          />
+          <button
+            id="clearAll"
+            class="h-11 px-4 rounded-xl bg-white/60 border border-black/10 font-semibold"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <div id="savedList" class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <p class="mt-10 opacity-70 text-center">Tip: Customize page -> Save Template -> it appears here.</p>
+    </main>
+
+            <footer class="mt-10 py-6 text-center text-xs font-semibold opacity-70">
+      Copyright@CSwebTG v2.0
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+

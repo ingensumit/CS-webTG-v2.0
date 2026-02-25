@@ -1,0 +1,169 @@
+<!doctype html>
+  <html>
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Code Sanskriti</title>
+  <style>
+  :root{ --p:#0ea5e9; --p2:#2563eb; --p3:#0f172a; }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    font-family: "Segoe UI", ui-sans-serif, system-ui;
+    background:
+      radial-gradient(900px 360px at 10% -10%, var(--p), transparent 60%),
+      radial-gradient(900px 360px at 100% 0%, var(--p2), transparent 62%),
+      #0a1020;
+    color:#e5e7eb;
+  }
+  .wrap{ max-width:1160px; margin:0 auto; padding:28px 18px 42px; }
+  .panel{ border-radius:30px; padding:18px; background: rgba(15,23,42,.52); backdrop-filter: blur(14px); border: 1px solid rgba(148,163,184,.25); box-shadow:0 24px 70px rgba(0,0,0,.18); }
+  .top{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:900; }
+  .brand img{ width:34px; height:34px; border-radius:50%; object-fit:cover; border:1px solid rgba(148,163,184,.35); }
+  .nav{ display:flex; gap:16px; flex-wrap:wrap; font-size:14px; opacity:.8; font-weight:700; }
+  .nav a{ color:inherit; text-decoration:none; }
+  .btn{ border:0; cursor:pointer; padding:11px 16px; border-radius:999px; font-weight:800; background:var(--p); color:white; text-decoration:none; display:inline-block; }
+  .ghost{ background:transparent; border:1px solid rgba(148,163,184,.45); color:#e5e7eb; }
+  .hero-title{
+    margin:26px 0 0;
+    font-size: clamp(44px, 9vw, 110px);
+    line-height: .95;
+    letter-spacing:-1.8px;
+    background: linear-gradient(95deg, var(--p3) 12%, var(--p) 52%, var(--p2) 92%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-weight:900;
+  }
+  .hero-sub{ margin:14px 0 0; font-size: clamp(16px,2.4vw,32px); opacity:.92; font-weight:600; }
+  .hero-note{ margin-top:10px; opacity:.78; max-width:68ch; }
+  .cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+  .cards{ margin-top:26px; display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:12px; }
+  .card{
+    border-radius:18px;
+    min-height:156px;
+    border:1px solid rgba(148,163,184,.25);
+    background:
+      linear-gradient(150deg, rgba(255,255,255,.2), rgba(255,255,255,0)),
+      linear-gradient(120deg, var(--p), var(--p2), var(--p3));
+    padding:14px;
+    color:#f8fafc;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    text-decoration:none;
+  }
+  .card:nth-child(2){ background:linear-gradient(120deg, var(--p2), var(--p3), var(--p)); }
+  .card:nth-child(3){ background:linear-gradient(120deg, var(--p3), var(--p), var(--p2)); }
+  .card:nth-child(4){ background:linear-gradient(120deg, var(--p), var(--p3), var(--p2)); }
+  .mark{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    font-size:12px;
+    opacity:.82;
+  }
+  .copyright{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid rgba(148,163,184,.25);
+    font-size:12px;
+    opacity:.8;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .feature-board{
+    margin-top:18px;
+    border:1px solid rgba(148,163,184,.25);
+    border-radius:18px;
+    padding:16px;
+    background:rgba(2,6,23,.25);
+  }
+  .feature-board h3{
+    margin:0 0 10px;
+    font-size:18px;
+    font-weight:900;
+    color:#e5e7eb;
+  }
+  .feature-board ul{
+    margin:0;
+    padding-left:20px;
+    display:grid;
+    gap:8px;
+    color:#e5e7eb;
+    opacity:.92;
+  }
+  .feature-note{
+    margin-top:12px;
+    font-weight:800;
+    color:#e5e7eb;
+  }
+  @media (max-width:940px){ .cards{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:560px){ .cards{ grid-template-columns:1fr; } }
+  </style>
+  </head>
+  <body>
+  <div class="wrap" id="top">
+    <section class="panel">
+      <div class="top">
+        <div class="brand">
+          <img src="assets/logo.png" alt="Logo"/>
+          <span>Code Sanskriti</span>
+        </div>
+        <div class="nav">
+          <a href="#hero">Modules</a>
+          <a href="#cards">Templates</a>
+          <a href="#mark">Collections</a>
+          <a href="#copyright">Contact</a>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn ghost" href="#mark">Get Advice</a>
+          <a class="btn" href="#hero">Start Project</a>
+        </div>
+      </div>
+
+      <h1 class="hero-title" id="hero">Code Sanskriti Pricing</h1>
+      <p class="hero-sub">Co-founded by Code Sanskriti and team</p>
+      <p class="hero-note">Professional pricing page for restaurant websites.</p>
+      <div class="cta">
+        <a class="btn" href="#cards">Get Started</a>
+        <a class="btn ghost" href="#top">Contact</a>
+      </div>
+
+      <div class="cards" id="cards">
+        <a class="card" href="#hero"><strong>Website Template</strong><span>Pricing Section</span></a>
+        <a class="card" href="#cards"><strong>Business Flow</strong><span>Restaurant - Glass | dark | #0ea5e9 / #2563eb / #0f172a</span></a>
+        <a class="card" href="#mark"><strong>Brand Layer</strong><span>Restaurant - Glass</span></a>
+        <a class="card" href="#copyright"><strong>AI Ready</strong><span>Functional Export</span></a>
+      </div>
+
+      <section class="feature-board" id="flow">
+        <h3>Platform Workflow</h3>
+        <ul>
+          <li>User login through secure Google verification (v3).</li>
+          <li>Access to Template Generator Page (TGP).</li>
+          <li>Selection from categorized templates.</li>
+          <li>Customization through Color Palette Page (CPP).</li>
+          <li>Live preview before finalizing.</li>
+          <li>Download complete website package.</li>
+        </ul>
+        <div class="feature-note">The system is designed to be simple, fast, and beginner-friendly.</div>
+      </section>
+
+      <div class="mark" id="mark">
+        <span>Trademark: Code Sanskriti™</span>
+        <span>Design System: CS webTG v2.0</span>
+      </div>
+      <div class="copyright" id="copyright">
+        <span>Copyright@CSwebTG v2.0</span>
+        <span>All Rights Reserved | Code Sanskriti™</span>
+      </div>
+    </section>
+  </div>
+  </body>
+  </html>

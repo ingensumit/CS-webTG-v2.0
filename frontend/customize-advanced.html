@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Customize - CS webTG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen bg-[#c9ced6] text-slate-900">
+    <header class="border-b border-black/15 bg-[#c9ced6]/80 backdrop-blur">
+      <div class="w-full px-4 py-4 flex items-center justify-between">
+        <a href="dashboard.html" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Code Sanskriti Logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-black/15 shadow-sm" />
+          <div class="font-black italic text-2xl text-sky-800/90">webTG</div>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="customize.html" class="font-semibold hover:underline">Back to Customize</a>
+          <a href="templates.html" class="font-semibold hover:underline">My Templates</a>
+          <button
+            id="logoutBtn"
+            class="h-10 px-4 rounded-full bg-white/60 border border-black/10 font-semibold"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <section class="adv-shell rounded-3xl bg-white/50 border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,.10)] p-6 md:p-8">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h1 class="text-3xl md:text-4xl font-extrabold">Advanced Customize Studio</h1>
+            <p class="mt-2 opacity-70 max-w-2xl">
+              Fine-tune visual quality before generation. These settings are for style direction and preview control.
+            </p>
+          </div>
+          <div class="text-xs font-semibold opacity-70">
+            Premium Workflow
+            <div class="mt-1">Design -> Preview -> Generate</div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid lg:grid-cols-2 gap-6">
+          <section class="adv-panel rounded-2xl p-5">
+            <h2 class="text-xl font-black">Design Controls</h2>
+
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm font-semibold opacity-80" for="advTheme">Theme Tone</label>
+                <select id="advTheme" class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none">
+                  <option value="dark" selected>Dark Premium</option>
+                  <option value="light">Light Premium</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm font-semibold opacity-80" for="advFont">Typography</label>
+                <select id="advFont" class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none">
+                  <option value="'Segoe UI',sans-serif" selected>Modern Sans</option>
+                  <option value="Georgia,serif">Editorial Serif</option>
+                  <option value="'Trebuchet MS',sans-serif">Startup Sans</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm font-semibold opacity-80" for="advAccent">Primary Accent</label>
+                <input id="advAccent" type="color" value="#0ea5e9" class="mt-2 h-11 w-full rounded-xl border border-black/20 bg-white/70 px-1" />
+              </div>
+              <div>
+                <label class="text-sm font-semibold opacity-80" for="advAccent2">Secondary Accent</label>
+                <input id="advAccent2" type="color" value="#0f766e" class="mt-2 h-11 w-full rounded-xl border border-black/20 bg-white/70 px-1" />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label class="text-sm font-semibold opacity-80" for="advRadius">Card Radius</label>
+              <input id="advRadius" type="range" min="8" max="36" value="18" class="mt-2 h-2 w-full" />
+              <div class="mt-1 text-xs opacity-70"><span id="advRadiusVal">18</span> px</div>
+            </div>
+
+            <div class="mt-4">
+              <label class="text-sm font-semibold opacity-80" for="advSpace">Section Spacing</label>
+              <input id="advSpace" type="range" min="12" max="48" value="24" class="mt-2 h-2 w-full" />
+              <div class="mt-1 text-xs opacity-70"><span id="advSpaceVal">24</span> px</div>
+            </div>
+
+            <div class="mt-4">
+              <label class="text-sm font-semibold opacity-80" for="advMotion">Animation Intensity</label>
+              <select id="advMotion" class="mt-2 w-full h-11 rounded-xl border border-black/20 bg-white/70 px-3 outline-none">
+                <option value="soft" selected>Soft</option>
+                <option value="medium">Medium</option>
+                <option value="bold">Bold</option>
+              </select>
+            </div>
+
+            <div class="mt-5 flex flex-wrap gap-3">
+              <button id="applyAdvanced" class="px-5 py-3 rounded-xl bg-slate-900 text-white font-bold">Apply to Preview</button>
+              <button id="resetAdvanced" class="px-5 py-3 rounded-xl bg-white/80 border border-black/10 font-bold">Reset</button>
+              <a href="customize.html" class="px-5 py-3 rounded-xl bg-emerald-700 text-white font-bold">Go Generate</a>
+            </div>
+          </section>
+
+          <section class="adv-panel rounded-2xl p-5">
+            <h2 class="text-xl font-black">Live Premium Preview</h2>
+            <p class="mt-1 text-sm opacity-70">See the final feel before using Generate on Customize page.</p>
+
+            <div id="advPreviewWrap" class="adv-preview mt-4 rounded-2xl border border-black/10 p-4 text-slate-100">
+              <div id="advPreviewCard" class="rounded-[18px] border border-slate-700/70 p-5 transition-all duration-300">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <img src="assets/logo.png" alt="logo" class="h-8 w-8 rounded-full object-cover" />
+                    <div>
+                      <div class="font-extrabold">Code Sanskriti</div>
+                      <div class="text-xs opacity-70">Premium UI preset</div>
+                    </div>
+                  </div>
+                  <a href="customize.html" class="text-xs font-bold px-3 py-1 rounded-full border border-slate-500/60">Open Builder</a>
+                </div>
+
+                <h3 id="advHero" class="mt-5 text-3xl font-black leading-tight">A refined, trust-first website experience.</h3>
+                <p class="mt-2 opacity-80">Typography, spacing, and motion tuned for conversion and readability.</p>
+
+                <div id="advMetrics" class="mt-5 grid grid-cols-3 gap-3">
+                  <div class="rounded-xl border border-slate-700/70 p-3">
+                    <div class="text-xs opacity-70">Templates</div>
+                    <div class="text-lg font-extrabold">1000+</div>
+                  </div>
+                  <div class="rounded-xl border border-slate-700/70 p-3">
+                    <div class="text-xs opacity-70">Render</div>
+                    <div class="text-lg font-extrabold">Live</div>
+                  </div>
+                  <div class="rounded-xl border border-slate-700/70 p-3">
+                    <div class="text-xs opacity-70">Export</div>
+                    <div class="text-lg font-extrabold">Multi-page</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 rounded-xl bg-white/80 border border-black/10 p-4">
+              <h3 class="font-extrabold">Advanced Checklist</h3>
+              <ul class="mt-2 text-sm opacity-80 space-y-1">
+                <li>- High contrast for dark/light mode</li>
+                <li>- Clean spacing rhythm and radius consistency</li>
+                <li>- Motion intensity controlled</li>
+                <li>- Button and card hierarchy balanced</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-10 py-6 text-center text-xs font-semibold opacity-70">
+      Copyright@CSwebTG v2.0
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        const theme = document.getElementById("advTheme");
+        const font = document.getElementById("advFont");
+        const accent = document.getElementById("advAccent");
+        const accent2 = document.getElementById("advAccent2");
+        const radius = document.getElementById("advRadius");
+        const spacing = document.getElementById("advSpace");
+        const motion = document.getElementById("advMotion");
+        const radiusVal = document.getElementById("advRadiusVal");
+        const spaceVal = document.getElementById("advSpaceVal");
+        const card = document.getElementById("advPreviewCard");
+        const wrap = document.getElementById("advPreviewWrap");
+        const hero = document.getElementById("advHero");
+        const metrics = document.getElementById("advMetrics");
+        const apply = document.getElementById("applyAdvanced");
+        const reset = document.getElementById("resetAdvanced");
+
+        function applyPreview() {
+          const r = Number(radius.value);
+          const s = Number(spacing.value);
+          radiusVal.textContent = String(r);
+          spaceVal.textContent = String(s);
+
+          card.style.borderRadius = r + "px";
+          card.style.padding = s + "px";
+          card.style.fontFamily = font.value;
+          hero.style.background = `linear-gradient(100deg, ${accent.value}, ${accent2.value})`;
+          hero.style.webkitBackgroundClip = "text";
+          hero.style.backgroundClip = "text";
+          hero.style.color = "transparent";
+
+          if (theme.value === "light") {
+            wrap.style.background = "#f8fafc";
+            wrap.style.color = "#0f172a";
+            card.style.borderColor = "rgba(15,23,42,.15)";
+            metrics.querySelectorAll("div").forEach((el) => (el.style.borderColor = "rgba(15,23,42,.12)"));
+          } else {
+            wrap.style.background = "#020617";
+            wrap.style.color = "#e2e8f0";
+            card.style.borderColor = "rgba(148,163,184,.55)";
+            metrics.querySelectorAll("div").forEach((el) => (el.style.borderColor = "rgba(148,163,184,.45)"));
+          }
+
+          const shadow = motion.value === "bold"
+            ? "0 24px 60px rgba(2,6,23,.45)"
+            : motion.value === "medium"
+              ? "0 18px 40px rgba(2,6,23,.34)"
+              : "0 12px 28px rgba(2,6,23,.28)";
+          card.style.boxShadow = shadow;
+          card.style.transform = motion.value === "bold" ? "translateY(-2px)" : "translateY(0)";
+        }
+
+        apply.addEventListener("click", applyPreview);
+        [theme, font, accent, accent2, radius, spacing, motion].forEach((el) => {
+          el.addEventListener("input", applyPreview);
+          el.addEventListener("change", applyPreview);
+        });
+        reset.addEventListener("click", () => {
+          theme.value = "dark";
+          font.value = "'Segoe UI',sans-serif";
+          accent.value = "#0ea5e9";
+          accent2.value = "#0f766e";
+          radius.value = "18";
+          spacing.value = "24";
+          motion.value = "soft";
+          applyPreview();
+        });
+
+        applyPreview();
+      })();
+    </script>
+  </body>
+</html>
+
+
+

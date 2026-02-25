@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - CS webTG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body class="min-h-screen bg-[#c9ced6] text-slate-900">
+    <header class="border-b border-black/15 bg-[#c9ced6]/80 backdrop-blur">
+      <div class="w-full px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="Code Sanskriti Logo" class="h-11 w-11 rounded-full object-cover ring-1 ring-black/15 shadow-sm" />
+          <div class="font-black italic text-2xl text-sky-800/90">webTG</div>
+        </a>
+        <a href="signup.html" class="font-semibold hover:underline">Create account</a>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <div class="max-w-xl mx-auto rounded-2xl bg-white/40 border border-white/30 shadow-[0_20px_60px_rgba(0,0,0,.10)] p-8">
+        <h1 class="text-4xl font-extrabold">Login</h1>
+        <p class="mt-2 opacity-70">Use email/password or continue with Google.</p>
+
+        <form id="loginForm" class="mt-8 space-y-5">
+          <div>
+            <label class="text-sm font-semibold opacity-80">Email</label>
+            <input
+              name="email"
+              class="mt-2 w-full h-12 rounded-xl border border-black/20 bg-white/70 px-4 outline-none"
+              placeholder="you@gmail.com"
+            />
+          </div>
+
+          <div>
+            <label class="text-sm font-semibold opacity-80">Password</label>
+            <div class="mt-2 flex gap-2">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                class="w-full h-12 rounded-xl border border-black/20 bg-white/70 px-4 outline-none"
+                placeholder="Password"
+              />
+              <button
+                type="button"
+                id="togglePass"
+                class="h-12 px-4 rounded-xl bg-white/60 border border-black/10"
+              >
+                Show
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full h-12 rounded-2xl bg-slate-800 text-white font-bold hover:scale-[1.01] active:scale-[.98] transition"
+          >
+            Login
+          </button>
+
+          <div class="pt-3 border-t border-black/10">
+            <p class="text-sm font-semibold opacity-80 mb-2">Continue with Google</p>
+            <div id="googleBtnWrap"></div>
+          </div>
+
+          <p id="msg" class="text-sm font-semibold"></p>
+
+          <div class="pt-2 border-t border-black/10">
+            <p class="text-sm opacity-75">New here?</p>
+            <a
+              href="signup.html"
+              class="mt-2 inline-flex items-center justify-center h-11 px-5 rounded-xl bg-white/75 border border-black/10 font-semibold hover:bg-white transition"
+            >
+              Create New Account
+            </a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+            <footer class="mt-10 py-6 text-center text-xs font-semibold opacity-70">
+      Copyright@CSwebTG v2.0
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
